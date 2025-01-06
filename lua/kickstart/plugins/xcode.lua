@@ -1,5 +1,8 @@
 return {
   'wojciech-kulik/xcodebuild.nvim',
+  cond = function()
+    return vim.fn.has 'macunix' == 1
+  end,
   dependencies = {
     'nvim-telescope/telescope.nvim',
     'MunifTanjim/nui.nvim',
