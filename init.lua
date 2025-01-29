@@ -535,6 +535,9 @@ require('lazy').setup({
             },
           },
         },
+        cmd = {
+          vim.trim(vim.fn.system { 'xcrun', '-f', 'sourcekit-lsp' }),
+        },
       }
       local servers = {
         -- clangd = {},
@@ -639,7 +642,13 @@ require('lazy').setup({
         -- You can use 'stop_after_first' to run the first available formatter from the list
         html = { 'prettierd' },
         css = { 'prettierd' },
+        swift = { 'swift_format' },
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      },
+      formatters = {
+        swift_format = {
+          command = 'swift format',
+        },
       },
     },
   },
